@@ -1,4 +1,4 @@
-# Joseph Dotfiles
+# Dotfiles
 
 Included here is a couple of the dotfiles I use. I'm pretty simple so they don't contain all that much, just enough to help me feel a tiny bit more productive.
 This may be updated from time to time but these are the basics.
