@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jcampuzano/.oh-my-zsh"
+export ZSH="/Users/campuzanojoseph/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -89,6 +89,8 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+export EDITOR="vim"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -103,16 +105,27 @@ source $ZSH/oh-my-zsh.sh
 
 # My aliases
 alias me="cd ~/me"
-alias gp="git pull"
-alias code="code-insiders"
+alias code="code"
 alias gs="git status"
-alias scripts="jc scripts"
+alias gp="git pull"
+alias gpom="git pull origin master"
+alias gfuck="git push -f"
+alias gc="git commit"
+alias gss="git stash"
+alias gsp="git stash pop"
+alias gsa="git stash apply"
+alias gl="git log --oneline -n 5"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias notes="cd ~/notes"
 
-function jcc() {
-  jc $@ --compiled-build;
+function timestamp() {
+  date +"%Y_%m_%d_%H_%M"
 }
 
-alias jcc="jcc"
+function g_archive() {
+  git archive --format=zip HEAD > "$(basename "$PWD")_$(date +"%Y_%m_%d_%H_%M").zip"
+}
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -145,4 +158,6 @@ eval $(thefuck --alias)
 
 export GRADLE_USER_HOME=~/.gradle
 
-# Work specific aliases
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+alias ls="exa"
