@@ -1,0 +1,25 @@
+{
+  "title": "Change control+escape to tilde, control+escape to tilde",
+  "rules": [
+    {
+      "description": "Change control+escape to tilde, control+escape to tilde",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "escape",
+            "modifiers": {
+              "mandatory": ["left_control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": ["left_control"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
